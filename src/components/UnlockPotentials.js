@@ -3,6 +3,8 @@ import easy from "../assets/icons/easy.svg";
 import personalized from "../assets/icons/personal.svg";
 import tests from "../assets/icons/test.svg";
 import answer from "../assets/icons/answer.svg";
+import playstore from "../assets/icons/playstore.svg";
+import applestore from "../assets/icons/applestore.svg";
 
 export default function UnlockPotentials() {
   return (
@@ -103,12 +105,35 @@ export default function UnlockPotentials() {
         </div>
       </div>
 
+      <div className="rewards-section ">
+        <div className="text-section">
+          <header>
+            <h1>Rise to the Top: Unlock Exclusive Rewards</h1>
+          </header>
+          <p>
+            Take your learning to the next level and earn special perks for
+            being a top student
+          </p>
 
-      <div className="rewards-section  pointer">
+          <div className="button-section">
+            <div className="button pointer">
+              <img
+                src={applestore}
+                draggable="false"
+                alt="download from Applestore"
+              />
+            </div>
 
+            <div className="button pointer">
+              <img
+                src={playstore}
+                draggable="false"
+                alt="download from Goodle Playstore"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-
-      
     </div>
   );
 }

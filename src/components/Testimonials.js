@@ -1,276 +1,129 @@
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useRef, useState } from "react";
+import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import { Rating } from "react-simple-star-rating";
+import defaultAvatar from "../assets/images/avatar.jpg";
+export default function Testimonials() {
+  const sliderRef = useRef(null);
+  const [scrolling, setScrolling] = useState({
+    right: true,
+    left: false,
+  });
+  const settings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 768,  
+        settings: {
+          slidesToShow: 1,  
+        },
+      },
+    ],
+  };
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Col, Container, Row } from "react-bootstrap"; 
+  const nextSlide = () => {
+    setScrolling({
+      ...scrolling,
+      right: true,
+      left: false,
+    });
+    sliderRef.current.slickNext();
+  };
 
-import testImage from "../assets/images/hero_img.svg";
-
-export default function Testimonials(){
-    const scroller = useSwiper()
-    return (
-        <div className="testimonials-container">
-
-            <button onClick={()=>scroller.slideNext()} >Next</button>
-            <button onClick={()=>scroller.slidePrev()} >Previous</button> 
-              <Row>
-          <Col>
-            <div className="screen-slider overflow-hidden swiper-initialized swiper-horizontal swiper-pointer-events">
-              {/* swiper */}
-              <Swiper
-                modules={[Autoplay, Pagination]}
-                spaceBetween={24}
-                centeredSlides={true}
-                loop={true}
-                
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                pagination={{ clickable: true, el: ".swiper-pagination" }}
-                breakpoints={{
-                  0: {
-                    slidesPerView: 2,
-                  },
-                  576: {
-                    slidesPerView: 3,
-                  },
-                  768: {
-                    slidesPerView: 3.5,
-                  },
-                  // 991: {
-                  //   slidesPerView: 3,
-                  // },
-                  1024: {
-                    slidesPerView: 4.2,
-                  },
-                }}
-                className="py-5"
-              >
-                <div className="swiper-wrapper">
-
-                  
-                  <SwiperSlide className="swiper-slide ">
-                    {/* <Row className="justify-content-center"> */}
-                      <div className="p-3">
-                        <div className="testimonial-box text-center">
-                          <p className="text-muted mb-2">
-                            “Itaque earum us tenetur sapiente delectus asperiores repellat.”
-                          </p>
-                          <p className="fs-10 fw-semibold lh-base mb-4 pb-3">
-                            At vero eos et accusamus iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atqued corrupti as
-                            quos dolores quas molestias excepturi occaecati provident.
-                          </p>
-                          <img
-                            src={testImage}
-                            alt=""
-                            className="shadow rounded-circle"
-                            width="70"
-                            height={"70"}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <h5 className="fs-18 fw-semibold mt-4 mb-0">Mayra Vasquez</h5>
-                          <p className="text-muted fs-14">Web Development, USA</p>
-                        </div>
-                      </div>
-                    {/* </Row> */}
-                  </SwiperSlide>
-
-
-
-                  
-                  <SwiperSlide className="swiper-slide">
-                    {/* <Row className="justify-content-center"> */}
-                      <div className="p-3">
-                        <div className="testimonial-box text-center">
-                          <p className="text-muted mb-2">
-                            “Itaque earum us tenetur sapiente delectus asperiores repellat.”
-                          </p>
-                          <p className="fs-10 fw-semibold lh-base mb-4 pb-3">
-                            At vero eos et accusamus iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atqued corrupti as
-                            quos dolores quas molestias excepturi occaecati provident.
-                          </p>
-                          <img
-                            src={testImage}
-                            alt=""
-                            className="shadow rounded-circle"
-                            width="70"
-                            height={"70"}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <h5 className="fs-18 fw-semibold mt-4 mb-0">Mayra Vasquez</h5>
-                          <p className="text-muted fs-14">Web Development, USA</p>
-                        </div>
-                      </div>
-                    {/* </Row> */}
-                  </SwiperSlide>
-
-
-
-                  
-                  <SwiperSlide className="swiper-slide">
-                    {/* <Row className="justify-content-center"> */}
-                      <div className="p-3">
-                        <div className="testimonial-box text-center">
-                          <p className="text-muted mb-2">
-                            “Itaque earum us tenetur sapiente delectus asperiores repellat.”
-                          </p>
-                          <p className="fs-10 fw-semibold lh-base mb-4 pb-3">
-                            At vero eos et accusamus iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atqued corrupti as
-                            quos dolores quas molestias excepturi occaecati provident.
-                          </p>
-                          <img
-                            src={testImage}
-                            alt=""
-                            className="shadow rounded-circle"
-                            width="70"
-                            height={"70"}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <h5 className="fs-18 fw-semibold mt-4 mb-0">Mayra Vasquez</h5>
-                          <p className="text-muted fs-14">Web Development, USA</p>
-                        </div>
-                      </div>
-                    {/* </Row> */}
-                  </SwiperSlide>
-
-
-
-                  
-                  <SwiperSlide className="swiper-slide">
-                    {/* <Row className="justify-content-center"> */}
-                      <div className="p-3">
-                        <div className="testimonial-box text-center">
-                          <p className="text-muted mb-2">
-                            “Itaque earum us tenetur sapiente delectus asperiores repellat.”
-                          </p>
-                          <p className="fs-10 fw-semibold lh-base mb-4 pb-3">
-                            At vero eos et accusamus iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atqued corrupti as
-                            quos dolores quas molestias excepturi occaecati provident.
-                          </p>
-                          <img
-                            src={testImage}
-                            alt=""
-                            className="shadow rounded-circle"
-                            width="70"
-                            height={"70"}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <h5 className="fs-18 fw-semibold mt-4 mb-0">Mayra Vasquez</h5>
-                          <p className="text-muted fs-14">Web Development, USA</p>
-                        </div>
-                      </div>
-                    {/* </Row> */}
-                  </SwiperSlide>
-
-
-
-                  
-                  <SwiperSlide className="swiper-slide">
-                    {/* <Row className="justify-content-center"> */}
-                      <div className="p-3">
-                        <div className="testimonial-box text-center">
-                          <p className="text-muted mb-2">
-                            “Itaque earum us tenetur sapiente delectus asperiores repellat.”
-                          </p>
-                          <p className="fs-10 fw-semibold lh-base mb-4 pb-3">
-                            At vero eos et accusamus iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atqued corrupti as
-                            quos dolores quas molestias excepturi occaecati provident.
-                          </p>
-                          <img
-                            src={testImage}
-                            alt=""
-                            className="shadow rounded-circle"
-                            width="70"
-                            height={"70"}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <h5 className="fs-18 fw-semibold mt-4 mb-0">Mayra Vasquez</h5>
-                          <p className="text-muted fs-14">Web Development, USA</p>
-                        </div>
-                      </div>
-                    {/* </Row> */}
-                  </SwiperSlide>
-
-
-
-                  
-                  <SwiperSlide className="swiper-slide">
-                    {/* <Row className="justify-content-center"> */}
-                      <div className="p-3">
-                        <div className="testimonial-box text-center">
-                          <p className="text-muted mb-2">
-                            “Itaque earum us tenetur sapiente delectus asperiores repellat.”
-                          </p>
-                          <p className="fs-10 fw-semibold lh-base mb-4 pb-3">
-                            At vero eos et accusamus iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atqued corrupti as
-                            quos dolores quas molestias excepturi occaecati provident.
-                          </p>
-                          <img
-                            src={testImage}
-                            alt=""
-                            className="shadow rounded-circle"
-                            width="70"
-                            height={"70"}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <h5 className="fs-18 fw-semibold mt-4 mb-0">Mayra Vasquez</h5>
-                          <p className="text-muted fs-14">Web Development, USA</p>
-                        </div>
-                      </div>
-                    {/* </Row> */}
-                  </SwiperSlide>
-
-
-
-
-
-
-                  {/* <SwiperSlide className="swiper-slide">
-                    <img src={screenShot6} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot3} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot5} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot2} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot4} alt="" className="img-fluid" />
-                  </SwiperSlide> */}
-
-                  {/* duplicate slide */}
-                  {/* <SwiperSlide className="swiper-slide">
-                    <img src={screenShot1} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot6} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot3} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot5} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot2} alt="" className="img-fluid" />
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <img src={screenShot4} alt="" className="img-fluid" />
-                  </SwiperSlide> */}
-                </div>
-                {/* <div className="swiper-pagination"></div> */}
-              </Swiper>
-            </div>
-          </Col>
-        </Row>
+  const prevSlide = () => {
+    setScrolling({
+      ...scrolling,
+      right: false,
+      left: true,
+    });
+    sliderRef.current.slickPrev();
+  };
+  return (
+    <div id="testimonials" className="testimonials-container">
+      <header>
+        <h2>
+          <span className="hide-on-mobile">Inpsiring Testimonials: </span>Students{" "}
+          <span className="love-text">Love</span> Stucademy!
+        </h2> 
+ 
+        <div className="controls">
+          <span
+            className={scrolling.left ? "active-control" : ""}
+            onClick={prevSlide}
+          >
+            <BsArrowLeftShort />
+          </span>
+          <span
+            className={scrolling.right ? "active-control" : ""}
+            onClick={nextSlide}
+          >
+            {" "}
+            <BsArrowRightShort />
+          </span>
         </div>
-    )
+      </header>
+
+      <div className="slider-area">
+        <Slider responsive={true} rows={1} ref={sliderRef} {...settings}>
+          {testimonies.map((item, i) => {
+            return (
+              <div className="testimony-container">
+                <div className="testimony " key={i}>
+                  <div className="avatar">
+                    <img src={item.avatar || defaultAvatar} alt="" />
+                  </div>
+
+                  <div className="text">{item.text}</div>
+
+                  <div className="bottom">
+                    <div className="name">{item.name}</div>
+                    <div className="rating">
+                      <Rating size={20} initialValue={item.stars} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
+    </div>
+  );
 }
+
+const testimonies = [
+  {
+    text: "I highly recommend this mobile application for students. its very informative and helped my child ace his examinations",
+    stars: 5,
+    name: "Onoja VOO",
+    avatar: "",
+  },
+  {
+    text: "Infermedica beats out other “elephants in the room” such as IBM Watson. Throughout our engagement we continue to be",
+    stars: 5,
+    name: "Joseph Jiyok",
+    avatar: "",
+  },
+  {
+    text: " my child ace his examinations",
+    stars: 3,
+    name: "Theresa Webb",
+    avatar: "",
+  },
+  {
+    text: "I highly recommend this mobile application for students. its very informative and helped my child ace his examinations",
+    stars: 5,
+    name: "Floyd Miles",
+    avatar: "",
+  },
+  {
+    text: "I highly recommend this mobile application for students. its very informative and helped my child ace his examinations",
+    stars: 5,
+    name: "Cody Fisher",
+    avatar: "",
+  },
+];

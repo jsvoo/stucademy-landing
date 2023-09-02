@@ -1,5 +1,6 @@
 import AchieveGoal from "../components/AchieveGoal";
 import Footer from "../components/Footer";
+import GetApp from "../components/GetApp";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
 import Testimonials from "../components/Testimonials";
@@ -16,6 +17,7 @@ export default function Index() {
         <AchieveGoal />
         <UnlockPotentials />
         <Testimonials/>
+        <GetApp/>
 
 
 

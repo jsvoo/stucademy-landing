@@ -6,7 +6,7 @@ import "../styles/hero.scss";
 
 export default function Hero() {
   return (
-    <div className="hero-container">
+    <div className="hero-container" id="home">
       <div className="text-section">
         <div className="content">
           <header>

@@ -3,7 +3,7 @@ import { AiOutlineStar } from "react-icons/ai";
 
 export default function AchieveGoal() {
   return (
-    <section className="achieve-goal-container">
+    <section className="achieve-goal-container" id="about-stucademy">
       <div className="content-width">
         <div className="header-section">
         <header>
