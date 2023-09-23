@@ -2,8 +2,7 @@ import "../styles/navbar.scss";
 import logo from "../assets/icons/logo.svg";
 import { FcMenu } from "react-icons/fc";
 import { LiaTimesSolid } from "react-icons/lia";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react"; 
 export default function NavBar() {
     const [switchMenu, setSwitchMenu] = useState(false)
 
@@ -11,8 +10,7 @@ export default function NavBar() {
         setSwitchMenu(!switchMenu)
     }
 
-
-    const navigate = useNavigate()
+ 
   return (
     <div className="navbar-container">
       <nav>
