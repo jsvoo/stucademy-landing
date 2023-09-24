@@ -3,8 +3,7 @@
 
 .hero-container{
     width: 90%;
-    margin: 30px auto;  
-
+    margin: 30px auto;   
     @include flex-between-center;
 
 
@@ -30,7 +29,7 @@
       }
     }
 
-    .image-section{
+    .image-section{ 
         img{
             width: 100%;
             object-fit: cover;

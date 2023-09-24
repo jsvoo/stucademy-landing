@@ -1,4 +1,5 @@
-import hero from "../assets/images/hero_img.svg";
+// import hero from "../assets/images/hero_img.svg";
+import hero from "../assets/images/hero_img.png";
 import playstore from "../assets/icons/playstore.svg";
 import applestore from "../assets/icons/applestore.svg";
 
